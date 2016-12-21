@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>komentarze</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+    .postUsername {width: 30% !important;}
+    .postBody   {width: 70% !important;}
+    </style>
+
+  </head>
+  <body ng-app='app'>
+    <div ng-controller='PostsCtrl' class="container">
+      <h1>Komentarze</h1>
+      <form role="form">
+          <div class="form-group">
+            <div class="input-group">
+              <input ng-model="postUsername" class="form-control postUsername" placeholder="Imię"/>
+              <input ng-model="postBody" class="form-control postBody" placeholder="Komentarz"/>
+              <span class="input-group-btn">
+                <button ng-click="addPost()" class="btn btn-default">
+                  Dodaj post
+                </button>
+              </span>
+            </div>
+          </div>
+      </form>
+      <ul class="list-group">
+        <li ng-repeat="post in posts | orderBy: '-date'" class="list-group-item">
+          <strong>{{post.username}}</strong>
+          <span>{{post.body}}</span>
+        </li>
+      </ul>
+    </div>
+    <script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js">
+    </script>
+    <script type="text/javascript" src="/app.js">
+    </script>
+  </body>
+</html>
