@@ -7,7 +7,8 @@ app.use(bodyParser.json());
 app.use(require('./controllers/api/posts'));
 app.use(require('./controllers/static'));
 
+var port = process.env.PORT || 8080;
 
-app.listen(8000, function(){
-  console.log('serwer slucha na 8000')
+app.listen(port, function(){
+  console.log('serwer slucha na ' + port)
 });
