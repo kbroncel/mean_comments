@@ -10,5 +10,5 @@ app.use(require('./controllers/static'));
 var port = process.env.PORT || 8080;
 
 app.listen(port, function(){
-  console.log('serwer slucha na ' + port)
+  console.log('server is listening at: ' + port)
 });

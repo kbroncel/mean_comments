@@ -11,19 +11,14 @@
     </style>
 
   </head>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <img src="/ryg.gif" alt="" class="img-responsive">
-    </div>
-  </div>
   <body ng-app='app'>
     <div ng-controller='PostsCtrl' class="container">
-      <h1>Nienawidzę Ryguły za to, że odchodzi z pracy, bo:</h1>
+      <h1>I want to say that:</h1>
       <form role="form">
           <div class="form-group">
             <div class="input-group">
-              <input ng-model="postUsername" class="form-control postUsername" placeholder="Imię"/>
-              <input ng-model="postBody" class="form-control postBody" placeholder="Komentarz"/>
+              <input ng-model="postUsername" class="form-control postUsername" placeholder="Name"/>
+              <input ng-model="postBody" class="form-control postBody" placeholder="Comment"/>
               <span class="input-group-btn">
                 <button ng-click="addPost()" class="btn btn-default">
                   Dodaj post
@@ -34,7 +29,7 @@
       </form>
       <ul class="list-group">
         <li ng-repeat="post in posts | orderBy: '-date'" class="list-group-item">
-          <strong>{{post.username}}</strong>
+          <strong>{{post.username}}:</strong>
           <span>{{post.body}}</span>
         </li>
       </ul>
